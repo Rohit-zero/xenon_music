@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
               )
               .make(),
           AppBar(
-            title: "Xenon Music".text.xl4.bold.wide.make().shimmer(
+            title: "Xenon".text.xl4.bold.wide.make().shimmer(
                 primaryColor: Color.fromARGB(255, 224, 204, 245),
                 secondaryColor: Colors.white),
             backgroundColor: Colors.transparent,
