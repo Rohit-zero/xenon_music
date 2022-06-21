@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:xenon_music/model/radio.dart';
 
 import '../utils/ai_util.dart';
 
@@ -11,10 +13,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late List<MyRadio> radios;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    fetchRadios();
+  }
+
+  fetchRadios() async {
+    final radioJson = await rootBundle.loadString("assets/radio.json");
+    radios = MyRadioList.fromJson(radioJson).radios;
+    print(radios);
   }
 
   @override
